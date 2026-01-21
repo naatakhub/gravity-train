@@ -1,84 +1,68 @@
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Link } from "react-router-dom";
-import { TrendingDown, Users, Theater, Sparkles, Heart, Globe, ExternalLink, BookOpen } from "lucide-react";
+import { Globe, ExternalLink, BookOpen } from "lucide-react";
+import Navigation from "@/components/Navigation";
+import Footer from "@/components/Footer";
 
 export default function About() {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-slate-950 via-indigo-950 to-slate-950">
-      {/* Navigation */}
-      <nav className="border-b border-indigo-900/30 backdrop-blur-sm bg-slate-950/50 sticky top-0 z-50">
-        <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-          <Link to="/" className="flex items-center gap-2">
-            <div className="w-8 h-8 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-lg flex items-center justify-center">
-              <TrendingDown className="w-5 h-5 text-white" />
-            </div>
-            <span className="text-xl font-bold bg-gradient-to-r from-indigo-400 to-purple-400 bg-clip-text text-transparent">
-              GravityTrain
-            </span>
-          </Link>
-          <div className="hidden md:flex items-center gap-6">
-            <Link to="/simulation" className="text-slate-300 hover:text-white transition-colors">Simulation</Link>
-            <Link to="/concepts" className="text-slate-300 hover:text-white transition-colors">Concepts</Link>
-            <Link to="/history" className="text-slate-300 hover:text-white transition-colors">History</Link>
-            <Link to="/about" className="text-white font-medium">About</Link>
-            <a href="https://www.naatak.org/portfolio/2026-hole/" target="_blank" rel="noopener noreferrer">
-              <Button className="bg-gradient-to-r from-amber-500 to-orange-600 hover:from-amber-400 hover:to-orange-500">
-                Book Tickets
-                <ExternalLink className="ml-2 w-4 h-4" />
-              </Button>
-            </a>
-          </div>
-        </div>
-      </nav>
+    <div className="min-h-screen bg-slate-950">
+      <Navigation />
 
       {/* Hero Section */}
-      <section className="relative py-20">
-        <div className="max-w-5xl mx-auto px-6 text-center">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-amber-500/10 border border-amber-500/30 mb-8">
-            <Theater className="w-4 h-4 text-amber-400" />
-            <span className="text-sm text-amber-300">A Naatak Production</span>
-          </div>
-          
-          <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-white via-indigo-200 to-purple-200 bg-clip-text text-transparent">
-            About This Experience
+      <section className="relative py-16">
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute inset-0" style={{
+            backgroundImage: `radial-gradient(circle at 1px 1px, #3B82F6 1px, transparent 0)`,
+            backgroundSize: '40px 40px'
+          }} />
+        </div>
+        <div className="relative max-w-5xl mx-auto px-6 text-center">
+          <span className="text-blue-400 font-mono text-xs uppercase tracking-[0.3em]">Naatak Original Production</span>
+          <h1 className="text-4xl md:text-5xl font-light text-white mt-2 tracking-wide">
+            "Hole"
           </h1>
-          
-          <p className="text-xl text-slate-300 max-w-3xl mx-auto leading-relaxed">
-            Welcome to the interactive lobby experience for <strong className="text-white">"Hole"</strong> — 
-            a groundbreaking theatrical production that brings the science fiction of gravity trains to life on stage.
+          <p className="text-xl text-blue-300 mt-4 font-mono">
+            Social satire meets science fiction
           </p>
         </div>
       </section>
 
       {/* About the Play */}
-      <section className="py-16">
+      <section className="py-12">
         <div className="max-w-5xl mx-auto px-6">
-          <Card className="bg-gradient-to-br from-amber-500/10 to-orange-500/10 border-amber-500/30 p-8 md:p-12">
-            <div className="flex items-center gap-3 mb-6">
-              <div className="w-12 h-12 bg-amber-500/20 rounded-xl flex items-center justify-center">
-                <Theater className="w-6 h-6 text-amber-400" />
-              </div>
-              <h2 className="text-2xl font-bold text-amber-400">"Hole" — The Play</h2>
-            </div>
-            
-            <div className="space-y-6 text-slate-300">
-              <p className="text-lg leading-relaxed">
-                What if you could travel anywhere on Earth in just 42 minutes? <strong className="text-white">"Hole"</strong> explores 
-                this tantalizing possibility through the lens of human connection, ambition, and the unintended consequences 
-                of revolutionary technology.
-              </p>
-              
-              <p className="text-lg leading-relaxed">
-                Set in a near-future where gravity trains have become reality, the play follows characters whose lives 
-                intersect in unexpected ways — from the scientists who made it possible to the everyday people whose 
-                worlds are transformed by instant global travel.
+          <Card className="border border-amber-400/40 bg-amber-500/10 p-8 md:p-10">
+            <div className="space-y-6">
+              <p className="text-lg leading-relaxed text-slate-200">
+                A Silicon Valley startup attempts the audacious: drilling a tunnel through Earth's core to transport
+                passengers between <strong className="text-white">Cupertino and Delhi in 42 minutes</strong>.
               </p>
 
-              <div className="pt-6">
+              <p className="text-lg leading-relaxed text-slate-200">
+                Operating under the classic startup mantra—<em className="text-amber-300">"ask for forgiveness, not permission"</em>—
+                the team pushes forward without adequate safeguards. What could go wrong?
+              </p>
+
+              <div className="grid sm:grid-cols-3 gap-4 pt-4 text-center">
+                <div className="border border-blue-400/30 bg-blue-500/10 p-4">
+                  <p className="text-blue-300 font-mono text-xs uppercase tracking-widest">Written by</p>
+                  <p className="text-white text-lg mt-1">Sujit Saraf</p>
+                </div>
+                <div className="border border-blue-400/30 bg-blue-500/10 p-4">
+                  <p className="text-blue-300 font-mono text-xs uppercase tracking-widest">Directed by</p>
+                  <p className="text-white text-lg mt-1">Poulomi Sarkar</p>
+                </div>
+                <div className="border border-blue-400/30 bg-blue-500/10 p-4">
+                  <p className="text-blue-300 font-mono text-xs uppercase tracking-widest">Runtime</p>
+                  <p className="text-white text-lg mt-1">90 minutes</p>
+                </div>
+              </div>
+
+              <div className="pt-4 flex flex-wrap gap-4 justify-center">
                 <a href="https://www.naatak.org/portfolio/2026-hole/" target="_blank" rel="noopener noreferrer">
-                  <Button size="lg" className="bg-gradient-to-r from-amber-500 to-orange-600 hover:from-amber-400 hover:to-orange-500">
-                    Get Your Tickets
+                  <Button size="lg" className="bg-amber-500/20 border border-amber-400/50 text-amber-300 hover:bg-amber-500/30 font-mono tracking-wide">
+                    Get Tickets
                     <ExternalLink className="ml-2 w-5 h-5" />
                   </Button>
                 </a>
@@ -89,50 +73,16 @@ export default function About() {
       </section>
 
       {/* About Naatak */}
-      <section className="py-16 bg-slate-900/50">
+      <section className="py-12 border-t border-blue-500/20">
         <div className="max-w-5xl mx-auto px-6">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-white mb-4">About Naatak</h2>
-            <p className="text-slate-400 max-w-2xl mx-auto">
-              Bringing South Asian stories to life through innovative theater
+          <div className="text-center">
+            <span className="text-blue-400 font-mono text-xs uppercase tracking-[0.3em]">Theater Company</span>
+            <h2 className="text-2xl font-light text-white mt-2 tracking-wide">About Naatak</h2>
+            <p className="text-blue-200 max-w-2xl mx-auto mt-4 font-mono text-sm">
+              One of the largest Indian theater groups in the US, creating original productions in the Bay Area since 1994.
             </p>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            <Card className="bg-slate-800/50 border-indigo-900/30 p-6 text-center">
-              <div className="w-12 h-12 bg-indigo-500/20 rounded-xl flex items-center justify-center mx-auto mb-4">
-                <Users className="w-6 h-6 text-indigo-400" />
-              </div>
-              <h3 className="text-lg font-semibold text-white mb-2">Community Theater</h3>
-              <p className="text-slate-400 text-sm">
-                One of the largest Indian theater groups in the United States, serving the Bay Area since 1994.
-              </p>
-            </Card>
-
-            <Card className="bg-slate-800/50 border-indigo-900/30 p-6 text-center">
-              <div className="w-12 h-12 bg-purple-500/20 rounded-xl flex items-center justify-center mx-auto mb-4">
-                <Sparkles className="w-6 h-6 text-purple-400" />
-              </div>
-              <h3 className="text-lg font-semibold text-white mb-2">Original Productions</h3>
-              <p className="text-slate-400 text-sm">
-                Creating thought-provoking original works that blend cultural heritage with contemporary themes.
-              </p>
-            </Card>
-
-            <Card className="bg-slate-800/50 border-indigo-900/30 p-6 text-center">
-              <div className="w-12 h-12 bg-green-500/20 rounded-xl flex items-center justify-center mx-auto mb-4">
-                <Heart className="w-6 h-6 text-green-400" />
-              </div>
-              <h3 className="text-lg font-semibold text-white mb-2">Volunteer-Driven</h3>
-              <p className="text-slate-400 text-sm">
-                Powered by passionate volunteers dedicated to the art of storytelling and theatrical excellence.
-              </p>
-            </Card>
-          </div>
-
-          <div className="text-center mt-10">
-            <a href="https://www.naatak.org" target="_blank" rel="noopener noreferrer">
-              <Button variant="outline" className="border-indigo-500/50 text-indigo-300 hover:bg-indigo-500/10">
+            <a href="https://www.naatak.org" target="_blank" rel="noopener noreferrer" className="inline-block mt-6">
+              <Button variant="outline" className="border-blue-400/50 text-blue-300 hover:bg-blue-500/20 font-mono tracking-wide">
                 Visit Naatak.org
                 <ExternalLink className="ml-2 w-4 h-4" />
               </Button>
@@ -141,110 +91,41 @@ export default function About() {
         </div>
       </section>
 
-      {/* About This Website */}
-      <section className="py-16">
+      {/* Explore */}
+      <section className="py-12 border-t border-blue-500/20">
         <div className="max-w-5xl mx-auto px-6">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-white mb-4">About This Interactive Experience</h2>
-            <p className="text-slate-400 max-w-2xl mx-auto">
-              Designed for the theater lobby to immerse audiences in the science behind the fiction
-            </p>
+          <div className="text-center mb-8">
+            <span className="text-blue-400 font-mono text-xs uppercase tracking-[0.3em]">Interactive Experience</span>
+            <h2 className="text-2xl font-light text-white mt-2 tracking-wide">Explore the Science</h2>
           </div>
-
-          <div className="grid md:grid-cols-2 gap-8">
-            <Card className="bg-slate-800/50 border-indigo-900/30 p-6">
-              <div className="flex items-center gap-3 mb-4">
-                <div className="w-10 h-10 bg-indigo-500/20 rounded-lg flex items-center justify-center">
-                  <Globe className="w-5 h-5 text-indigo-400" />
+          <div className="grid md:grid-cols-2 gap-6">
+            <Link to="/simulation" className="block">
+              <Card className="bg-slate-900/50 border border-blue-400/30 p-6 hover:border-blue-400/60 hover:bg-blue-500/10 transition-all h-full">
+                <div className="w-10 h-10 border border-blue-400/50 rounded flex items-center justify-center mb-4">
+                  <Globe className="w-5 h-5 text-blue-400" />
                 </div>
-                <h3 className="text-lg font-semibold text-white">Interactive Simulation</h3>
-              </div>
-              <p className="text-slate-400">
-                Explore real physics concepts through our gravity train simulator. Select any two cities and watch 
-                how gravity would propel you through Earth's interior.
-              </p>
-              <div className="mt-4">
-                <Link to="/simulation">
-                  <Button variant="outline" size="sm" className="border-indigo-500/50 text-indigo-300 hover:bg-indigo-500/10">
-                    Try Simulation
-                  </Button>
-                </Link>
-              </div>
-            </Card>
-
-            <Card className="bg-slate-800/50 border-indigo-900/30 p-6">
-              <div className="flex items-center gap-3 mb-4">
-                <div className="w-10 h-10 bg-cyan-500/20 rounded-lg flex items-center justify-center">
-                  <BookOpen className="w-5 h-5 text-cyan-400" />
+                <h3 className="text-lg font-light text-white tracking-wide mb-2">Interactive Simulation</h3>
+                <p className="text-blue-200 text-sm font-mono">
+                  Watch gravity propel you through Earth's interior between any two cities.
+                </p>
+              </Card>
+            </Link>
+            <Link to="/concepts" className="block">
+              <Card className="bg-slate-900/50 border border-blue-400/30 p-6 hover:border-blue-400/60 hover:bg-blue-500/10 transition-all h-full">
+                <div className="w-10 h-10 border border-blue-400/50 rounded flex items-center justify-center mb-4">
+                  <BookOpen className="w-5 h-5 text-blue-400" />
                 </div>
-                <h3 className="text-lg font-semibold text-white">Physics Concepts</h3>
-              </div>
-              <p className="text-slate-400">
-                Dive deep into the science — from gravity tunnels to Brachistochrone curves. Understand why 
-                every journey takes exactly 42 minutes.
-              </p>
-              <div className="mt-4">
-                <Link to="/concepts">
-                  <Button variant="outline" size="sm" className="border-cyan-500/50 text-cyan-300 hover:bg-cyan-500/10">
-                    Learn Concepts
-                  </Button>
-                </Link>
-              </div>
-            </Card>
-          </div>
-        </div>
-      </section>
-
-      {/* CTA */}
-      <section className="py-16 bg-gradient-to-r from-indigo-900/30 to-purple-900/30">
-        <div className="max-w-4xl mx-auto px-6 text-center">
-          <h2 className="text-3xl font-bold text-white mb-4">Ready to Take the Plunge?</h2>
-          <p className="text-slate-300 mb-8">
-            Experience "Hole" live on stage and discover what happens when humanity digs too deep.
-          </p>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <a href="https://www.naatak.org/portfolio/2026-hole/" target="_blank" rel="noopener noreferrer">
-              <Button size="lg" className="bg-gradient-to-r from-amber-500 to-orange-600 hover:from-amber-400 hover:to-orange-500">
-                Book Your Gravity Train
-                <ExternalLink className="ml-2 w-5 h-5" />
-              </Button>
-            </a>
-            <Link to="/simulation">
-              <Button size="lg" variant="outline" className="border-indigo-500/50 text-indigo-300 hover:bg-indigo-500/10">
-                Try the Simulation First
-              </Button>
+                <h3 className="text-lg font-light text-white tracking-wide mb-2">Physics Concepts</h3>
+                <p className="text-blue-200 text-sm font-mono">
+                  Understand why every gravity train journey takes exactly 42 minutes.
+                </p>
+              </Card>
             </Link>
           </div>
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="border-t border-indigo-900/30 bg-slate-950/50 py-12">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-6">
-            <div className="flex items-center gap-2">
-              <div className="w-8 h-8 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-lg flex items-center justify-center">
-                <TrendingDown className="w-5 h-5 text-white" />
-              </div>
-              <span className="text-xl font-bold bg-gradient-to-r from-indigo-400 to-purple-400 bg-clip-text text-transparent">
-                GravityTrain
-              </span>
-            </div>
-            <div className="flex items-center gap-6">
-              <Link to="/simulation" className="text-slate-400 hover:text-white text-sm transition-colors">Simulation</Link>
-              <Link to="/concepts" className="text-slate-400 hover:text-white text-sm transition-colors">Concepts</Link>
-              <Link to="/history" className="text-slate-400 hover:text-white text-sm transition-colors">History</Link>
-              <Link to="/about" className="text-slate-400 hover:text-white text-sm transition-colors">About</Link>
-              <a href="https://www.naatak.org/portfolio/2026-hole/" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-white text-sm transition-colors">Naatak</a>
-            </div>
-          </div>
-          <div className="mt-8 pt-8 border-t border-slate-800 text-center">
-            <p className="text-slate-500 text-sm">
-              An interactive lobby experience for "Hole" — A Naatak Production © 2026
-            </p>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 }

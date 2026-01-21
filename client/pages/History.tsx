@@ -1,36 +1,14 @@
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Link } from "react-router-dom";
-import { TrendingDown, History as HistoryIcon, ExternalLink, BookOpen, Quote } from "lucide-react";
+import { History as HistoryIcon, BookOpen, Quote } from "lucide-react";
+import Navigation from "@/components/Navigation";
+import Footer from "@/components/Footer";
 
 export default function History() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-slate-950 via-indigo-950 to-slate-950">
-      {/* Navigation */}
-      <nav className="border-b border-indigo-900/30 backdrop-blur-sm bg-slate-950/50 sticky top-0 z-50">
-        <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-          <Link to="/" className="flex items-center gap-2">
-            <div className="w-8 h-8 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-lg flex items-center justify-center">
-              <TrendingDown className="w-5 h-5 text-white" />
-            </div>
-            <span className="text-xl font-bold bg-gradient-to-r from-indigo-400 to-purple-400 bg-clip-text text-transparent">
-              GravityTrain
-            </span>
-          </Link>
-          <div className="hidden md:flex items-center gap-6">
-            <Link to="/simulation" className="text-slate-300 hover:text-white transition-colors">Simulation</Link>
-            <Link to="/concepts" className="text-slate-300 hover:text-white transition-colors">Concepts</Link>
-            <Link to="/history" className="text-white font-medium">History</Link>
-            <Link to="/about" className="text-slate-300 hover:text-white transition-colors">About</Link>
-            <a href="https://www.naatak.org/portfolio/2026-hole/" target="_blank" rel="noopener noreferrer">
-              <Button className="bg-gradient-to-r from-amber-500 to-orange-600 hover:from-amber-400 hover:to-orange-500">
-                Book Tickets
-                <ExternalLink className="ml-2 w-4 h-4" />
-              </Button>
-            </a>
-          </div>
-        </div>
-      </nav>
+      <Navigation />
 
       {/* Hero Section */}
       <section className="relative py-16">
@@ -39,13 +17,13 @@ export default function History() {
             <HistoryIcon className="w-4 h-4 text-indigo-400" />
             <span className="text-sm text-indigo-300">Scientific History</span>
           </div>
-          
+
           <h1 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-white via-indigo-200 to-purple-200 bg-clip-text text-transparent">
             The History of Gravity Tunnels
           </h1>
-          
+
           <p className="text-xl text-slate-300 max-w-3xl mx-auto leading-relaxed">
-            The concept of falling through Earth dates back over 340 years, born from a remarkable correspondence 
+            The concept of falling through Earth dates back over 340 years, born from a remarkable correspondence
             between two of history's greatest scientific minds.
           </p>
         </div>
@@ -58,7 +36,7 @@ export default function History() {
             <div className="grid md:grid-cols-3 gap-8 items-start">
               <div className="md:col-span-1">
                 <div className="relative">
-                  <img 
+                  <img
                     src="https://upload.wikimedia.org/wikipedia/commons/1/15/Robert_Hooke_1635-1703_Johannes_Hevelius_1611-1687_Christopher_Wren_1632-1723.jpg"
                     alt="Robert Hooke"
                     className="rounded-xl w-full aspect-square object-cover object-top border-2 border-indigo-500/30"
@@ -69,7 +47,7 @@ export default function History() {
                   </div>
                 </div>
               </div>
-              
+
               <div className="md:col-span-2 space-y-6">
                 <div className="flex items-center gap-3">
                   <div className="w-10 h-10 bg-amber-500/20 rounded-lg flex items-center justify-center">
@@ -77,25 +55,25 @@ export default function History() {
                   </div>
                   <h2 className="text-2xl font-bold text-amber-400">Robert Hooke</h2>
                 </div>
-                
+
                 <div className="text-slate-300 space-y-4">
                   <p className="leading-relaxed">
-                    <strong className="text-white">Robert Hooke</strong> was an English polymath — a scientist, architect, 
-                    and natural philosopher who made groundbreaking contributions to physics, biology, and astronomy. 
-                    He is famous for <strong className="text-indigo-300">Hooke's Law</strong> (describing elasticity) and for 
+                    <strong className="text-white">Robert Hooke</strong> was an English polymath — a scientist, architect,
+                    and natural philosopher who made groundbreaking contributions to physics, biology, and astronomy.
+                    He is famous for <strong className="text-indigo-300">Hooke's Law</strong> (describing elasticity) and for
                     coining the term "cell" in biology.
                   </p>
-                  
+
                   <p className="leading-relaxed">
-                    In <strong className="text-white">November 1679</strong>, Hooke initiated a correspondence with 
-                    Isaac Newton that would change the course of physics. In his letters, Hooke proposed a thought 
-                    experiment: <em className="text-indigo-300">What would happen if an object fell through a tunnel 
+                    In <strong className="text-white">November 1679</strong>, Hooke initiated a correspondence with
+                    Isaac Newton that would change the course of physics. In his letters, Hooke proposed a thought
+                    experiment: <em className="text-indigo-300">What would happen if an object fell through a tunnel
                     drilled through the center of the Earth?</em>
                   </p>
 
                   <div className="bg-slate-900/50 rounded-xl p-6 border border-slate-700">
                     <p className="italic text-slate-400">
-                      "Suppose a ball dropped from a height could pass through the Earth... it would not stop at the 
+                      "Suppose a ball dropped from a height could pass through the Earth... it would not stop at the
                       center but continue oscillating back and forth."
                     </p>
                     <p className="text-sm text-slate-500 mt-2">— Hooke's letter to Newton, 1679</p>
@@ -114,7 +92,7 @@ export default function History() {
             <div className="grid md:grid-cols-3 gap-8 items-start">
               <div className="md:col-span-1 md:order-2">
                 <div className="relative">
-                  <img 
+                  <img
                     src="https://upload.wikimedia.org/wikipedia/commons/3/3b/Portrait_of_Sir_Isaac_Newton%2C_1689.jpg"
                     alt="Isaac Newton"
                     className="rounded-xl w-full aspect-square object-cover object-top border-2 border-purple-500/30"
@@ -125,7 +103,7 @@ export default function History() {
                   </div>
                 </div>
               </div>
-              
+
               <div className="md:col-span-2 md:order-1 space-y-6">
                 <div className="flex items-center gap-3">
                   <div className="w-10 h-10 bg-purple-500/20 rounded-lg flex items-center justify-center">
@@ -133,22 +111,22 @@ export default function History() {
                   </div>
                   <h2 className="text-2xl font-bold text-purple-400">Isaac Newton</h2>
                 </div>
-                
+
                 <div className="text-slate-300 space-y-4">
                   <p className="leading-relaxed">
-                    <strong className="text-white">Sir Isaac Newton</strong> responded to Hooke's challenge with 
-                    mathematical rigor. Newton analyzed the problem using his developing theory of gravitation, 
+                    <strong className="text-white">Sir Isaac Newton</strong> responded to Hooke's challenge with
+                    mathematical rigor. Newton analyzed the problem using his developing theory of gravitation,
                     calculating how an object would accelerate and decelerate as it passed through Earth.
                   </p>
-                  
+
                   <p className="leading-relaxed">
-                    Newton's analysis revealed something remarkable: assuming a uniformly dense Earth, the object 
-                    would undergo <strong className="text-purple-300">simple harmonic motion</strong> — oscillating 
+                    Newton's analysis revealed something remarkable: assuming a uniformly dense Earth, the object
+                    would undergo <strong className="text-purple-300">simple harmonic motion</strong> — oscillating
                     back and forth like a pendulum, with a period independent of the tunnel's path!
                   </p>
 
                   <p className="leading-relaxed">
-                    This correspondence, though sometimes contentious (Hooke and Newton had a famous rivalry), 
+                    This correspondence, though sometimes contentious (Hooke and Newton had a famous rivalry),
                     helped Newton refine his ideas that would later appear in the <strong className="text-white">
                     Principia Mathematica</strong> (1687), one of the most important scientific works ever written.
                   </p>
@@ -163,7 +141,7 @@ export default function History() {
       <section className="py-12 bg-slate-900/50">
         <div className="max-w-5xl mx-auto px-6">
           <h2 className="text-2xl font-bold text-white text-center mb-10">Historical Timeline</h2>
-          
+
           <div className="space-y-6">
             {[
               { year: "1679", title: "The Correspondence Begins", description: "Robert Hooke writes to Newton proposing the gravity tunnel thought experiment, asking about the path of a falling object through Earth." },
@@ -196,29 +174,29 @@ export default function History() {
         <div className="max-w-5xl mx-auto px-6">
           <Card className="bg-gradient-to-br from-red-500/10 to-orange-500/10 border-red-500/30 p-8">
             <h2 className="text-2xl font-bold text-red-400 mb-6">The Famous Rivalry</h2>
-            
+
             <div className="text-slate-300 space-y-4">
               <p className="leading-relaxed">
-                The relationship between Hooke and Newton was one of science's most famous rivalries. While their 
-                correspondence on gravity tunnels was productive, they clashed bitterly over credit for discoveries, 
+                The relationship between Hooke and Newton was one of science's most famous rivalries. While their
+                correspondence on gravity tunnels was productive, they clashed bitterly over credit for discoveries,
                 particularly regarding the inverse-square law of gravitation.
               </p>
-              
+
               <p className="leading-relaxed">
-                Hooke claimed he had suggested the inverse-square relationship to Newton, while Newton insisted he 
+                Hooke claimed he had suggested the inverse-square relationship to Newton, while Newton insisted he
                 had derived it independently. This dispute led Newton to famously (and possibly sarcastically) write:
               </p>
-              
+
               <div className="bg-slate-900/50 rounded-xl p-6 border border-slate-700">
                 <p className="italic text-slate-400 text-lg">
                   "If I have seen further, it is by standing on the shoulders of giants."
                 </p>
                 <p className="text-sm text-slate-500 mt-2">— Isaac Newton, letter to Robert Hooke, 1675</p>
               </div>
-              
+
               <p className="leading-relaxed text-sm text-slate-400">
-                Some historians believe this was a veiled insult, as Hooke was known to be short in stature. 
-                Regardless of their personal conflicts, their scientific exchange on gravity tunnels remains a 
+                Some historians believe this was a veiled insult, as Hooke was known to be short in stature.
+                Regardless of their personal conflicts, their scientific exchange on gravity tunnels remains a
                 fascinating chapter in the history of physics.
               </p>
             </div>
@@ -249,32 +227,7 @@ export default function History() {
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="border-t border-indigo-900/30 bg-slate-950/50 py-12">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-6">
-            <div className="flex items-center gap-2">
-              <div className="w-8 h-8 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-lg flex items-center justify-center">
-                <TrendingDown className="w-5 h-5 text-white" />
-              </div>
-              <span className="text-xl font-bold bg-gradient-to-r from-indigo-400 to-purple-400 bg-clip-text text-transparent">
-                GravityTrain
-              </span>
-            </div>
-            <div className="flex items-center gap-6">
-              <Link to="/simulation" className="text-slate-400 hover:text-white text-sm transition-colors">Simulation</Link>
-              <Link to="/concepts" className="text-slate-400 hover:text-white text-sm transition-colors">Concepts</Link>
-              <Link to="/history" className="text-slate-400 hover:text-white text-sm transition-colors">History</Link>
-              <Link to="/about" className="text-slate-400 hover:text-white text-sm transition-colors">About</Link>
-            </div>
-          </div>
-          <div className="mt-8 pt-8 border-t border-slate-800 text-center">
-            <p className="text-slate-500 text-sm">
-              An interactive lobby experience for "Hole" — A Naatak Production © 2026
-            </p>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 }

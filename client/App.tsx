@@ -1,38 +1,31 @@
 import "./global.css";
 
-import { Toaster } from "@/components/ui/toaster";
 import { createRoot } from "react-dom/client";
-import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { HashRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import Simulation from "./pages/Simulation";
 import Concepts from "./pages/Concepts";
 import History from "./pages/History";
 import About from "./pages/About";
+import WormStatus from "./pages/WormStatus";
 import NotFound from "./pages/NotFound";
 
-const queryClient = new QueryClient();
-
 const App = () => (
-  <QueryClientProvider client={queryClient}>
-    <TooltipProvider>
-      <Toaster />
-      <Sonner />
-      <HashRouter>
-        <Routes>
-          <Route path="/" element={<Index />} />
-          <Route path="/simulation" element={<Simulation />} />
-          <Route path="/concepts" element={<Concepts />} />
-          <Route path="/history" element={<History />} />
-          <Route path="/about" element={<About />} />
-          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-      </HashRouter>
-    </TooltipProvider>
-  </QueryClientProvider>
+  <TooltipProvider>
+    <HashRouter>
+      <Routes>
+        <Route path="/" element={<Index />} />
+        <Route path="/simulation" element={<Simulation />} />
+        <Route path="/concepts" element={<Concepts />} />
+        <Route path="/history" element={<History />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/worm-status" element={<WormStatus />} />
+        {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+        <Route path="*" element={<NotFound />} />
+      </Routes>
+    </HashRouter>
+  </TooltipProvider>
 );
 
 const rootElement = document.getElementById("root")!;
