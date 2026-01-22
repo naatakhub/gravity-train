@@ -373,7 +373,7 @@ export default function GlobeView() {
               </button>
               <div className="text-center">
                 <p className="text-blue-400 font-mono text-xs uppercase tracking-[0.3em] mb-4">
-                  Destination Reached
+                  Book Your Journey Now
                 </p>
                 <h2 className="text-3xl md:text-4xl font-bold text-white mb-2">
                   Welcome to <span className="text-amber-400">Rancho Station</span>
