@@ -252,6 +252,9 @@ export default function GlobeView() {
               <Link to="/concepts" className="text-slate-300 hover:text-blue-400 transition-colors">
                 Concepts
               </Link>
+              <Link to="/history" className="text-slate-300 hover:text-blue-400 transition-colors">
+                History
+              </Link>
               <Link to="/about" className="text-slate-300 hover:text-blue-400 transition-colors">
                 About
               </Link>
@@ -360,11 +363,11 @@ export default function GlobeView() {
       {showModal && (
         <>
           <div
-            className="fixed inset-0 z-40 bg-slate-950/60 backdrop-blur-sm animate-fade-in"
+            className="fixed inset-0 z-40 bg-slate-950/40 animate-fade-in"
             onClick={() => setShowModal(false)}
           />
           <div className="fixed left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-50 w-[min(800px,95vw)] max-h-[90vh] overflow-y-auto animate-scale-in">
-            <div className="bg-gradient-to-b from-slate-900/95 to-slate-950/95 backdrop-blur-md border border-blue-400/30 rounded-2xl p-8 md:p-10 shadow-2xl shadow-blue-500/20 relative">
+            <div className="bg-gradient-to-b from-slate-900/70 to-slate-950/70 backdrop-blur-sm border border-blue-400/30 rounded-2xl p-8 md:p-10 shadow-2xl shadow-blue-500/20 relative">
               <button
                 onClick={() => setShowModal(false)}
                 className="absolute right-4 top-4 w-8 h-8 rounded-lg border border-blue-400/30 bg-slate-800/50 text-blue-300 hover:bg-slate-700/50 flex items-center justify-center font-bold"

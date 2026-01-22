@@ -47,6 +47,7 @@ export default function Navigation({ minimal }: NavigationProps) {
               </Link>
               <Link to="/simulation" className={linkClass("/simulation")}>Simulation</Link>
               <Link to="/concepts" className={linkClass("/concepts")}>Concepts</Link>
+              <Link to="/history" className={linkClass("/history")}>History</Link>
               <Link to="/about" className={linkClass("/about")}>About</Link>
             </div>
             <a href="https://www.naatak.org/portfolio/2026-hole/" target="_blank" rel="noopener noreferrer">
