@@ -376,10 +376,10 @@ export default function GlobeView() {
                   Destination Reached
                 </p>
                 <h2 className="text-3xl md:text-4xl font-bold text-white mb-2">
-                  Welcome to <span className="text-amber-400">New Delhi</span>
+                  Welcome to <span className="text-amber-400">Rancho Station</span>
                 </h2>
                 <p className="text-blue-300 font-mono text-sm mb-6">
-                  Cubberley Theatre, Palo Alto
+                  Starbright Theater, Campbell
                 </p>
               </div>
 
