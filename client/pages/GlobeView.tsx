@@ -183,7 +183,7 @@ export default function GlobeView() {
     const midLon = (CUPERTINO.lon + NEW_DELHI.lon) / 2;
     const midLat = (CUPERTINO.lat + NEW_DELHI.lat) / 2;
     viewer.camera.flyTo({
-      destination: Cesium.Cartesian3.fromDegrees(midLon, midLat, 20000000),
+      destination: Cesium.Cartesian3.fromDegrees(midLon, midLat, 22000000),
       duration: 2,
     });
 
@@ -201,10 +201,10 @@ export default function GlobeView() {
   const timeElapsed = Math.floor(progress * 42);
   const timeSeconds = Math.floor((progress * 42 % 1) * 60);
 
-  // Depth calculation - max depth at midpoint (~3430 km for Cupertino-Delhi)
-  const maxDepth = 3430;
-  const depth = Math.sin(progress * Math.PI) * maxDepth;
-  const depthPercent = (depth / maxDepth) * 100;
+  // Distance traveled along tunnel (chord length ~10541 km for Cupertino-Delhi)
+  const tunnelLength = 10541;
+  const distance = progress * tunnelLength;
+  const distancePercent = (distance / tunnelLength) * 100;
 
   // Show modal when train reaches destination (progress > 0.98)
   useEffect(() => {
@@ -279,43 +279,43 @@ export default function GlobeView() {
           </p>
         </div>
 
-        {/* Left Panel - Altimeter (hidden on mobile) */}
-        <div className="hidden lg:block absolute left-8 top-1/2 -translate-y-1/2 z-10 pointer-events-none">
-          <div className="bg-slate-950/80 backdrop-blur-md border border-blue-500/30 rounded-xl p-6 w-56">
-            <h3 className="text-blue-400/80 font-mono text-xs uppercase tracking-widest mb-3 text-center">Depth</h3>
-            <p className="text-4xl font-bold text-blue-300 font-mono text-center">
-              {Math.round(depth).toLocaleString()}
+        {/* Left Panel - Distance (hidden on mobile) */}
+        <div className="hidden lg:block absolute left-10 top-1/2 -translate-y-1/2 z-10 pointer-events-none">
+          <div className="bg-slate-950/80 backdrop-blur-md border border-blue-500/30 rounded-2xl p-10 w-80">
+            <h3 className="text-blue-400/80 font-mono text-base uppercase tracking-widest mb-5 text-center">Distance</h3>
+            <p className="text-6xl font-bold text-blue-300 font-mono text-center">
+              {Math.round(distance).toLocaleString()}
             </p>
-            <p className="text-sm text-blue-400/70 font-mono text-center mb-4">km below surface</p>
-            <div className="relative h-4 rounded-full overflow-hidden" style={{ background: 'linear-gradient(90deg, #3b82f6 0%, #6366f1 50%, #8b5cf6 100%)' }}>
+            <p className="text-lg text-blue-400/70 font-mono text-center mb-6">km traveled</p>
+            <div className="relative h-6 rounded-full overflow-hidden" style={{ background: 'linear-gradient(90deg, #3b82f6 0%, #6366f1 50%, #8b5cf6 100%)' }}>
               <div
                 className="absolute inset-y-0 right-0 bg-slate-800"
-                style={{ width: `${100 - depthPercent}%` }}
+                style={{ width: `${100 - distancePercent}%` }}
               />
             </div>
-            <div className="flex justify-between mt-2 text-[10px] font-mono text-slate-500">
+            <div className="flex justify-between mt-3 text-sm font-mono text-slate-500">
               <span>0</span>
-              <span>1.7k</span>
-              <span>3.4k</span>
+              <span>5.3k</span>
+              <span>10.5k</span>
             </div>
           </div>
         </div>
 
         {/* Right Panel - Speedometer (hidden on mobile) */}
-        <div className="hidden lg:block absolute right-8 top-1/2 -translate-y-1/2 z-10 pointer-events-none">
-          <div className="bg-slate-950/80 backdrop-blur-md border border-blue-500/30 rounded-xl p-6 w-56">
-            <h3 className="text-amber-400/80 font-mono text-xs uppercase tracking-widest mb-3 text-center">Speed</h3>
-            <p className="text-4xl font-bold text-amber-300 font-mono text-center">
+        <div className="hidden lg:block absolute right-10 top-1/2 -translate-y-1/2 z-10 pointer-events-none">
+          <div className="bg-slate-950/80 backdrop-blur-md border border-blue-500/30 rounded-2xl p-10 w-80">
+            <h3 className="text-amber-400/80 font-mono text-base uppercase tracking-widest mb-5 text-center">Speed</h3>
+            <p className="text-6xl font-bold text-amber-300 font-mono text-center">
               {Math.round(speed).toLocaleString()}
             </p>
-            <p className="text-sm text-amber-400/70 font-mono text-center mb-4">km/h</p>
-            <div className="relative h-4 rounded-full overflow-hidden" style={{ background: 'linear-gradient(90deg, #22c55e 0%, #eab308 50%, #ef4444 100%)' }}>
+            <p className="text-lg text-amber-400/70 font-mono text-center mb-6">km/h</p>
+            <div className="relative h-6 rounded-full overflow-hidden" style={{ background: 'linear-gradient(90deg, #22c55e 0%, #eab308 50%, #ef4444 100%)' }}>
               <div
                 className="absolute inset-y-0 right-0 bg-slate-800"
                 style={{ width: `${100 - (speed / 28400) * 100}%` }}
               />
             </div>
-            <div className="flex justify-between mt-2 text-[10px] font-mono text-slate-500">
+            <div className="flex justify-between mt-3 text-sm font-mono text-slate-500">
               <span>0</span>
               <span>14k</span>
               <span>28k</span>

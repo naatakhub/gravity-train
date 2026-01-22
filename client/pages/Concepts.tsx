@@ -104,18 +104,18 @@ export default function Concepts() {
           </div>
         </Card>
 
-        {/* Why Gravity Train Can't Use Brachistochrone */}
+        {/* Brachistochrone vs Straight Tunnel */}
         <Card className="bg-slate-900/50 border border-blue-500/30 p-8 mb-8">
           <div className="flex items-center gap-3 mb-6">
             <div className="w-12 h-12 border border-amber-400/50 rounded flex items-center justify-center">
               <Atom className="w-6 h-6 text-amber-400" />
             </div>
-            <h2 className="text-2xl font-light text-amber-400 tracking-wide">Why Not Use the Brachistochrone?</h2>
+            <h2 className="text-2xl font-light text-amber-400 tracking-wide">Two Paths, Two Elegances</h2>
           </div>
 
           <div className="space-y-6 text-blue-200 font-mono text-sm">
             <p className="leading-relaxed">
-              While the brachistochrone is optimal in a <em className="text-blue-300">uniform gravitational field</em>, gravity trains operate in a fundamentally different environment.
+              Inside Earth, gravity varies with depth—creating a unique physics problem with <em className="text-blue-300">two fascinating solutions</em>.
             </p>
 
             <div className="border border-amber-400/40 bg-amber-500/10 p-6">
@@ -136,25 +136,31 @@ export default function Concepts() {
               </ul>
             </div>
 
-            <div className="border border-blue-500/30 p-6">
-              <h3 className="text-sm font-mono text-blue-400 uppercase tracking-[0.2em] mb-4">Physics Breakdown</h3>
-              <div className="space-y-4">
-                <p>
-                  <strong className="text-blue-300">Brachistochrone:</strong> Assumes constant gravity in one direction. The cycloid is optimal here.
+            <div className="grid md:grid-cols-2 gap-4">
+              <div className="border border-emerald-400/40 bg-emerald-500/10 p-6">
+                <h3 className="text-sm font-mono text-emerald-400 uppercase tracking-[0.2em] mb-3">The Straight Tunnel</h3>
+                <p className="mb-3">
+                  A chord through Earth produces <strong className="text-white">simple harmonic motion</strong>—like a cosmic pendulum.
                 </p>
-                <p>
-                  <strong className="text-emerald-400">Gravity tunnel:</strong> Gravity varies linearly with depth, always pointing toward center. Only mass "below" contributes to gravitational pull.
+                <p className="text-emerald-300">
+                  <strong>Time:</strong> Always 42 minutes, regardless of distance. This universal constant is the poetry of physics.
                 </p>
-                <p>
-                  <strong className="text-amber-400">Result:</strong> The mathematics changes completely. For gravity trains, the <em className="text-white">straight chord</em> produces simple harmonic motion—already optimal for this force field.
+              </div>
+              <div className="border border-purple-400/40 bg-purple-500/10 p-6">
+                <h3 className="text-sm font-mono text-purple-400 uppercase tracking-[0.2em] mb-3">The Hypocycloid</h3>
+                <p className="mb-3">
+                  The true brachistochrone inside Earth is a <strong className="text-white">hypocycloid</strong>—a curve that dips deeper early to gain speed.
+                </p>
+                <p className="text-purple-300">
+                  <strong>Time:</strong> ~27 minutes for long routes. Faster, but loses the elegant 42-minute universality.
                 </p>
               </div>
             </div>
 
-            <div className="border border-purple-400/40 bg-purple-500/10 p-6">
-              <h3 className="text-sm font-mono text-purple-400 uppercase tracking-[0.2em] mb-3">Summary</h3>
+            <div className="border border-blue-500/30 p-6">
+              <h3 className="text-sm font-mono text-blue-400 uppercase tracking-[0.2em] mb-3">Why 42 Minutes Captivates Us</h3>
               <p>
-                The brachistochrone is fastest in <em>constant</em> gravity. Inside Earth, gravity decreases toward the center—fundamentally changing the problem. The straight tunnel becomes the natural "least-time" path for this unique gravitational environment.
+                The hypocycloid is technically faster—but the straight tunnel's <em className="text-white">42-minute constant</em> is what captures the imagination. The same journey time from New York to London as from your house to your neighbor's. This elegant universality, emerging from simple harmonic motion, is why the gravity train endures as one of physics' most beautiful thought experiments.
               </p>
             </div>
           </div>
