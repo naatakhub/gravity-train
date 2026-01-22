@@ -7,22 +7,22 @@ import Footer from "@/components/Footer";
 
 export default function History() {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-slate-950 via-indigo-950 to-slate-950">
+    <div className="min-h-screen bg-slate-950">
       <Navigation />
 
       {/* Hero Section */}
       <section className="relative py-16">
         <div className="max-w-5xl mx-auto px-6 text-center">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-indigo-500/10 border border-indigo-500/30 mb-8">
-            <HistoryIcon className="w-4 h-4 text-indigo-400" />
-            <span className="text-sm text-indigo-300">Scientific History</span>
+          <div className="flex items-center justify-center gap-3 mb-4">
+            <div className="w-12 h-12 border border-blue-400/50 rounded flex items-center justify-center">
+              <HistoryIcon className="w-6 h-6 text-blue-400" />
+            </div>
           </div>
-
-          <h1 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-white via-indigo-200 to-purple-200 bg-clip-text text-transparent">
+          <span className="text-blue-400 font-mono text-xs uppercase tracking-[0.3em]">Scientific History</span>
+          <h1 className="text-4xl md:text-5xl font-light text-white mt-2 tracking-wide">
             The History of Gravity Tunnels
           </h1>
-
-          <p className="text-xl text-slate-300 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-blue-200 max-w-3xl mx-auto mt-4 font-mono text-sm">
             The concept of falling through Earth dates back over 340 years, born from a remarkable correspondence
             between two of history's greatest scientific minds.
           </p>
@@ -30,16 +30,16 @@ export default function History() {
       </section>
 
       {/* Robert Hooke Section */}
-      <section className="py-12">
+      <section className="py-12 border-t border-blue-500/20">
         <div className="max-w-5xl mx-auto px-6">
-          <Card className="bg-slate-800/50 border-indigo-900/30 p-8 md:p-10">
+          <Card className="bg-slate-900/50 border border-blue-500/30 p-8 md:p-10">
             <div className="grid md:grid-cols-3 gap-8 items-start">
               <div className="md:col-span-1">
                 <div className="relative">
                   <img
-                    src="https://upload.wikimedia.org/wikipedia/commons/1/15/Robert_Hooke_1635-1703_Johannes_Hevelius_1611-1687_Christopher_Wren_1632-1723.jpg"
+                    src="https://upload.wikimedia.org/wikipedia/commons/a/a5/13_Portrait_of_Robert_Hooke.JPG"
                     alt="Robert Hooke"
-                    className="rounded-xl w-full aspect-square object-cover object-top border-2 border-indigo-500/30"
+                    className="rounded-xl w-full aspect-square object-cover object-top border-2 border-blue-500/30"
                   />
                   <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-slate-900 to-transparent p-4 rounded-b-xl">
                     <p className="text-white font-semibold">Robert Hooke</p>
@@ -50,33 +50,33 @@ export default function History() {
 
               <div className="md:col-span-2 space-y-6">
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 bg-amber-500/20 rounded-lg flex items-center justify-center">
+                  <div className="w-10 h-10 border border-amber-400/50 rounded flex items-center justify-center">
                     <Quote className="w-5 h-5 text-amber-400" />
                   </div>
-                  <h2 className="text-2xl font-bold text-amber-400">Robert Hooke</h2>
+                  <h2 className="text-2xl font-light text-amber-400 tracking-wide">Robert Hooke</h2>
                 </div>
 
-                <div className="text-slate-300 space-y-4">
+                <div className="text-blue-200 space-y-4 font-mono text-sm">
                   <p className="leading-relaxed">
                     <strong className="text-white">Robert Hooke</strong> was an English polymath — a scientist, architect,
                     and natural philosopher who made groundbreaking contributions to physics, biology, and astronomy.
-                    He is famous for <strong className="text-indigo-300">Hooke's Law</strong> (describing elasticity) and for
+                    He is famous for <strong className="text-blue-300">Hooke's Law</strong> (describing elasticity) and for
                     coining the term "cell" in biology.
                   </p>
 
                   <p className="leading-relaxed">
                     In <strong className="text-white">November 1679</strong>, Hooke initiated a correspondence with
                     Isaac Newton that would change the course of physics. In his letters, Hooke proposed a thought
-                    experiment: <em className="text-indigo-300">What would happen if an object fell through a tunnel
+                    experiment: <em className="text-blue-300">What would happen if an object fell through a tunnel
                     drilled through the center of the Earth?</em>
                   </p>
 
-                  <div className="bg-slate-900/50 rounded-xl p-6 border border-slate-700">
-                    <p className="italic text-slate-400">
+                  <div className="border border-blue-500/30 p-6">
+                    <p className="italic text-blue-300">
                       "Suppose a ball dropped from a height could pass through the Earth... it would not stop at the
                       center but continue oscillating back and forth."
                     </p>
-                    <p className="text-sm text-slate-500 mt-2">— Hooke's letter to Newton, 1679</p>
+                    <p className="text-xs text-blue-400 mt-2">— Hooke's letter to Newton, 1679</p>
                   </div>
                 </div>
               </div>
@@ -86,16 +86,16 @@ export default function History() {
       </section>
 
       {/* Isaac Newton Section */}
-      <section className="py-12">
+      <section className="py-12 border-t border-blue-500/20">
         <div className="max-w-5xl mx-auto px-6">
-          <Card className="bg-slate-800/50 border-indigo-900/30 p-8 md:p-10">
+          <Card className="bg-slate-900/50 border border-blue-500/30 p-8 md:p-10">
             <div className="grid md:grid-cols-3 gap-8 items-start">
               <div className="md:col-span-1 md:order-2">
                 <div className="relative">
                   <img
                     src="https://upload.wikimedia.org/wikipedia/commons/3/3b/Portrait_of_Sir_Isaac_Newton%2C_1689.jpg"
                     alt="Isaac Newton"
-                    className="rounded-xl w-full aspect-square object-cover object-top border-2 border-purple-500/30"
+                    className="rounded-xl w-full aspect-square object-cover object-top border-2 border-blue-500/30"
                   />
                   <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-slate-900 to-transparent p-4 rounded-b-xl">
                     <p className="text-white font-semibold">Isaac Newton</p>
@@ -106,13 +106,13 @@ export default function History() {
 
               <div className="md:col-span-2 md:order-1 space-y-6">
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 bg-purple-500/20 rounded-lg flex items-center justify-center">
-                    <Quote className="w-5 h-5 text-purple-400" />
+                  <div className="w-10 h-10 border border-emerald-400/50 rounded flex items-center justify-center">
+                    <Quote className="w-5 h-5 text-emerald-400" />
                   </div>
-                  <h2 className="text-2xl font-bold text-purple-400">Isaac Newton</h2>
+                  <h2 className="text-2xl font-light text-emerald-400 tracking-wide">Isaac Newton</h2>
                 </div>
 
-                <div className="text-slate-300 space-y-4">
+                <div className="text-blue-200 space-y-4 font-mono text-sm">
                   <p className="leading-relaxed">
                     <strong className="text-white">Sir Isaac Newton</strong> responded to Hooke's challenge with
                     mathematical rigor. Newton analyzed the problem using his developing theory of gravitation,
@@ -121,7 +121,7 @@ export default function History() {
 
                   <p className="leading-relaxed">
                     Newton's analysis revealed something remarkable: assuming a uniformly dense Earth, the object
-                    would undergo <strong className="text-purple-300">simple harmonic motion</strong> — oscillating
+                    would undergo <strong className="text-blue-300">simple harmonic motion</strong> — oscillating
                     back and forth like a pendulum, with a period independent of the tunnel's path!
                   </p>
 
@@ -138,9 +138,9 @@ export default function History() {
       </section>
 
       {/* Timeline */}
-      <section className="py-12 bg-slate-900/50">
+      <section className="py-12 border-t border-blue-500/20">
         <div className="max-w-5xl mx-auto px-6">
-          <h2 className="text-2xl font-bold text-white text-center mb-10">Historical Timeline</h2>
+          <h2 className="text-2xl font-light text-white text-center mb-10 tracking-wide">Historical Timeline</h2>
 
           <div className="space-y-6">
             {[
@@ -153,15 +153,15 @@ export default function History() {
             ].map((item, idx) => (
               <div key={idx} className="flex gap-6">
                 <div className="flex-shrink-0 w-20 text-right">
-                  <span className="text-indigo-400 font-bold">{item.year}</span>
+                  <span className="text-blue-400 font-mono text-sm">{item.year}</span>
                 </div>
                 <div className="flex-shrink-0 flex flex-col items-center">
-                  <div className="w-4 h-4 rounded-full bg-indigo-500 border-4 border-slate-900"></div>
-                  {idx < 5 && <div className="w-0.5 h-full bg-indigo-500/30 mt-2"></div>}
+                  <div className="w-4 h-4 rounded-full bg-blue-500 border-4 border-slate-950"></div>
+                  {idx < 5 && <div className="w-0.5 h-full bg-blue-500/30 mt-2"></div>}
                 </div>
                 <div className="pb-8">
                   <h3 className="text-white font-semibold mb-1">{item.title}</h3>
-                  <p className="text-slate-400 text-sm">{item.description}</p>
+                  <p className="text-blue-200 text-sm font-mono">{item.description}</p>
                 </div>
               </div>
             ))}
@@ -170,12 +170,12 @@ export default function History() {
       </section>
 
       {/* The Rivalry */}
-      <section className="py-12">
+      <section className="py-12 border-t border-blue-500/20">
         <div className="max-w-5xl mx-auto px-6">
-          <Card className="bg-gradient-to-br from-red-500/10 to-orange-500/10 border-red-500/30 p-8">
-            <h2 className="text-2xl font-bold text-red-400 mb-6">The Famous Rivalry</h2>
+          <Card className="bg-slate-900/50 border border-amber-500/30 p-8">
+            <h2 className="text-2xl font-light text-amber-400 mb-6 tracking-wide">The Famous Rivalry</h2>
 
-            <div className="text-slate-300 space-y-4">
+            <div className="text-blue-200 space-y-4 font-mono text-sm">
               <p className="leading-relaxed">
                 The relationship between Hooke and Newton was one of science's most famous rivalries. While their
                 correspondence on gravity tunnels was productive, they clashed bitterly over credit for discoveries,
@@ -187,14 +187,14 @@ export default function History() {
                 had derived it independently. This dispute led Newton to famously (and possibly sarcastically) write:
               </p>
 
-              <div className="bg-slate-900/50 rounded-xl p-6 border border-slate-700">
-                <p className="italic text-slate-400 text-lg">
+              <div className="border border-blue-500/30 p-6">
+                <p className="italic text-blue-300 text-base">
                   "If I have seen further, it is by standing on the shoulders of giants."
                 </p>
-                <p className="text-sm text-slate-500 mt-2">— Isaac Newton, letter to Robert Hooke, 1675</p>
+                <p className="text-xs text-blue-400 mt-2">— Isaac Newton, letter to Robert Hooke, 1675</p>
               </div>
 
-              <p className="leading-relaxed text-sm text-slate-400">
+              <p className="leading-relaxed text-blue-300/70">
                 Some historians believe this was a veiled insult, as Hooke was known to be short in stature.
                 Regardless of their personal conflicts, their scientific exchange on gravity tunnels remains a
                 fascinating chapter in the history of physics.
@@ -205,21 +205,21 @@ export default function History() {
       </section>
 
       {/* CTA */}
-      <section className="py-16">
+      <section className="py-16 border-t border-blue-500/20">
         <div className="max-w-4xl mx-auto px-6 text-center">
-          <h2 className="text-3xl font-bold text-white mb-4">Explore the Science</h2>
-          <p className="text-slate-300 mb-8">
+          <h2 className="text-3xl font-light text-white mb-4 tracking-wide">Explore the Science</h2>
+          <p className="text-blue-200 mb-8 font-mono text-sm">
             Now that you know the history, dive deeper into the physics or try the simulation yourself.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Link to="/concepts">
-              <Button size="lg" className="bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-500 hover:to-purple-500">
+              <Button size="lg" className="bg-blue-500/20 border border-blue-400/40 text-blue-300 hover:bg-blue-500/30 font-mono tracking-wide">
                 <BookOpen className="mr-2 w-5 h-5" />
                 Learn the Physics
               </Button>
             </Link>
             <Link to="/simulation">
-              <Button size="lg" variant="outline" className="border-indigo-500/50 text-indigo-300 hover:bg-indigo-500/10">
+              <Button size="lg" className="bg-amber-500/20 border border-amber-400/50 text-amber-300 hover:bg-amber-500/30 font-mono tracking-wide">
                 Try the Simulation
               </Button>
             </Link>
