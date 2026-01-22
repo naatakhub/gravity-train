@@ -36,21 +36,24 @@ export default function Navigation({ minimal }: NavigationProps) {
             </a>
           </div>
         ) : (
-          <div className="hidden md:flex items-center gap-6 font-mono text-sm">
-            <Link to="/worm-status" className={`${linkClass("/worm-status")} flex items-center gap-2`}>
-              <span className="relative flex h-2 w-2">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
-              </span>
-              Status
-            </Link>
-            <Link to="/simulation" className={linkClass("/simulation")}>Simulation</Link>
-            <Link to="/concepts" className={linkClass("/concepts")}>Concepts</Link>
-            <Link to="/about" className={linkClass("/about")}>About</Link>
+          <div className="flex items-center gap-2 sm:gap-4">
+            <div className="hidden md:flex items-center gap-6 font-mono text-sm">
+              <Link to="/worm-status" className={`${linkClass("/worm-status")} flex items-center gap-2`}>
+                <span className="relative flex h-2 w-2">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
+                </span>
+                Status
+              </Link>
+              <Link to="/simulation" className={linkClass("/simulation")}>Simulation</Link>
+              <Link to="/concepts" className={linkClass("/concepts")}>Concepts</Link>
+              <Link to="/about" className={linkClass("/about")}>About</Link>
+            </div>
             <a href="https://www.naatak.org/portfolio/2026-hole/" target="_blank" rel="noopener noreferrer">
-              <Button className="bg-blue-500/20 border border-blue-400/40 text-blue-300 hover:bg-blue-500/30 font-mono">
-                Book Tickets
-                <ExternalLink className="ml-2 w-4 h-4" />
+              <Button className="bg-blue-500/20 border border-blue-400/40 text-blue-300 hover:bg-blue-500/30 font-mono text-xs sm:text-sm px-2 sm:px-4">
+                <span className="hidden sm:inline">Book Tickets</span>
+                <span className="sm:hidden">Book</span>
+                <ExternalLink className="ml-1 sm:ml-2 w-4 h-4" />
               </Button>
             </a>
           </div>
