@@ -15,6 +15,7 @@ export default function Footer() {
             <Link to="/worm-status" className="text-slate-400 hover:text-blue-400 transition-colors">Status</Link>
             <Link to="/simulation" className="text-slate-400 hover:text-blue-400 transition-colors">Simulation</Link>
             <Link to="/concepts" className="text-slate-400 hover:text-blue-400 transition-colors">Concepts</Link>
+            <Link to="/history" className="text-slate-400 hover:text-blue-400 transition-colors">History</Link>
             <Link to="/about" className="text-slate-400 hover:text-blue-400 transition-colors">About</Link>
             <a href="https://www.naatak.org/portfolio/2026-hole/" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-blue-400 transition-colors">Naatak</a>
           </div>
