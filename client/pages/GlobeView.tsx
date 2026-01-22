@@ -113,7 +113,7 @@ export default function GlobeView() {
 
     viewerRef.current = viewer;
 
-    const positions = computeChordPositions(CUPERTINO, NEW_DELHI, 100);
+    const positions = computeChordPositions(CUPERTINO, NEW_DELHI, 200);
     chordPositionsRef.current = positions;
 
     // Tunnel line (yellow/amber glow)
