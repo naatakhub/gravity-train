@@ -37,7 +37,7 @@ export default function History() {
               <div className="md:col-span-1">
                 <div className="relative">
                   <img
-                    src="https://upload.wikimedia.org/wikipedia/commons/a/a5/13_Portrait_of_Robert_Hooke.JPG"
+                    src="/robert-hooke.jpeg"
                     alt="Robert Hooke"
                     className="rounded-xl w-full aspect-square object-cover object-top border-2 border-blue-500/30"
                   />
