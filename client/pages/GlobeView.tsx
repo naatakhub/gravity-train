@@ -244,7 +244,7 @@ export default function GlobeView() {
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
                   <span className="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
                 </span>
-                Status
+                Worm Status
               </Link>
               <Link to="/simulation" className="text-slate-300 hover:text-blue-400 transition-colors">
                 Simulation
@@ -280,52 +280,46 @@ export default function GlobeView() {
         </div>
 
         {/* Left Panel - Altimeter (hidden on mobile) */}
-        <div className="hidden lg:block absolute left-4 top-1/2 -translate-y-1/2 z-10 pointer-events-none">
-          <div className="bg-slate-950/80 backdrop-blur-md border border-blue-500/30 rounded-xl p-4 w-48">
-            <h3 className="text-blue-400 font-mono text-xs uppercase tracking-widest mb-3 text-center">Depth</h3>
-            <div className="relative h-48 border border-blue-500/30 rounded-lg overflow-hidden bg-slate-900/50">
-              <div
-                className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-blue-500 to-blue-400/50 transition-all duration-200"
-                style={{ height: `${depthPercent}%` }}
-              />
-              <div className="absolute inset-0 flex flex-col justify-between py-2 px-1">
-                {[3000, 2000, 1000, 0].map((d) => (
-                  <div key={d} className="flex items-center gap-1">
-                    <div className="w-2 h-px bg-blue-400/50" />
-                    <span className="text-blue-300/70 text-[10px] font-mono">{d}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-            <p className="text-2xl font-bold text-blue-300 font-mono text-center mt-3">
-              {Math.round(depth).toLocaleString()} km
+        <div className="hidden lg:block absolute left-8 top-1/2 -translate-y-1/2 z-10 pointer-events-none">
+          <div className="bg-slate-950/80 backdrop-blur-md border border-blue-500/30 rounded-xl p-6 w-56">
+            <h3 className="text-blue-400/80 font-mono text-xs uppercase tracking-widest mb-3 text-center">Depth</h3>
+            <p className="text-4xl font-bold text-blue-300 font-mono text-center">
+              {Math.round(depth).toLocaleString()}
             </p>
-            <p className="text-xs text-blue-400/70 font-mono text-center">Below Surface</p>
+            <p className="text-sm text-blue-400/70 font-mono text-center mb-4">km below surface</p>
+            <div className="relative h-4 rounded-full overflow-hidden" style={{ background: 'linear-gradient(90deg, #3b82f6 0%, #6366f1 50%, #8b5cf6 100%)' }}>
+              <div
+                className="absolute inset-y-0 right-0 bg-slate-800"
+                style={{ width: `${100 - depthPercent}%` }}
+              />
+            </div>
+            <div className="flex justify-between mt-2 text-[10px] font-mono text-slate-500">
+              <span>0</span>
+              <span>1.7k</span>
+              <span>3.4k</span>
+            </div>
           </div>
         </div>
 
         {/* Right Panel - Speedometer (hidden on mobile) */}
-        <div className="hidden lg:block absolute right-4 top-1/2 -translate-y-1/2 z-10 pointer-events-none">
-          <div className="bg-slate-950/80 backdrop-blur-md border border-blue-500/30 rounded-xl p-4 w-48">
-            <h3 className="text-amber-400 font-mono text-xs uppercase tracking-widest mb-3 text-center">Speed</h3>
-            <div className="relative h-48 border border-amber-500/30 rounded-lg overflow-hidden bg-slate-900/50">
-              <div
-                className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-amber-500 to-amber-400/50 transition-all duration-200"
-                style={{ height: `${(speed / 28400) * 100}%` }}
-              />
-              <div className="absolute inset-0 flex flex-col justify-between py-2 px-1">
-                {[28000, 20000, 10000, 0].map((s) => (
-                  <div key={s} className="flex items-center justify-end gap-1">
-                    <span className="text-amber-300/70 text-[10px] font-mono">{s / 1000}k</span>
-                    <div className="w-2 h-px bg-amber-400/50" />
-                  </div>
-                ))}
-              </div>
-            </div>
-            <p className="text-2xl font-bold text-amber-300 font-mono text-center mt-3">
+        <div className="hidden lg:block absolute right-8 top-1/2 -translate-y-1/2 z-10 pointer-events-none">
+          <div className="bg-slate-950/80 backdrop-blur-md border border-blue-500/30 rounded-xl p-6 w-56">
+            <h3 className="text-amber-400/80 font-mono text-xs uppercase tracking-widest mb-3 text-center">Speed</h3>
+            <p className="text-4xl font-bold text-amber-300 font-mono text-center">
               {Math.round(speed).toLocaleString()}
             </p>
-            <p className="text-xs text-amber-400/70 font-mono text-center">km/h</p>
+            <p className="text-sm text-amber-400/70 font-mono text-center mb-4">km/h</p>
+            <div className="relative h-4 rounded-full overflow-hidden" style={{ background: 'linear-gradient(90deg, #22c55e 0%, #eab308 50%, #ef4444 100%)' }}>
+              <div
+                className="absolute inset-y-0 right-0 bg-slate-800"
+                style={{ width: `${100 - (speed / 28400) * 100}%` }}
+              />
+            </div>
+            <div className="flex justify-between mt-2 text-[10px] font-mono text-slate-500">
+              <span>0</span>
+              <span>14k</span>
+              <span>28k</span>
+            </div>
           </div>
         </div>
 
