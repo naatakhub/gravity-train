@@ -9,13 +9,15 @@ import Concepts from "./pages/Concepts";
 import History from "./pages/History";
 import About from "./pages/About";
 import WormStatus from "./pages/WormStatus";
+import GlobeView from "./pages/GlobeView";
 import NotFound from "./pages/NotFound";
 
 const App = () => (
   <TooltipProvider>
     <HashRouter>
       <Routes>
-        <Route path="/" element={<Index />} />
+        <Route path="/" element={<GlobeView />} />
+        <Route path="/home" element={<Index />} />
         <Route path="/simulation" element={<Simulation />} />
         <Route path="/concepts" element={<Concepts />} />
         <Route path="/history" element={<History />} />

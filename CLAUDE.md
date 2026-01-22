@@ -48,3 +48,7 @@ pnpm typecheck     # TypeScript check
 - Maintain the space/cosmic visual theme (dark backgrounds, indigo/purple gradients)
 - All routes must work as SPA (client-side routing)
 - Test 3D components on mobile - keep performance in mind
+
+## Git
+
+- No Co-Authored-By sign-off needed in commits

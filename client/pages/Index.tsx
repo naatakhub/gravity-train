@@ -127,7 +127,13 @@ export default function Index() {
               </span>
             </Link>
 
-            <div className="flex items-center justify-center gap-4">
+            <div className="flex items-center justify-center gap-4 flex-wrap">
+              <Link to="/">
+                <Button size="lg" className="bg-amber-500/20 border border-amber-400/50 text-amber-300 hover:bg-amber-500/30 font-mono tracking-wide px-8">
+                  <Globe className="mr-2 w-5 h-5" />
+                  View 3D Globe
+                </Button>
+              </Link>
               <Link to="/simulation">
                 <Button size="lg" className="bg-blue-500/20 border border-blue-400/40 text-blue-300 hover:bg-blue-500/30 font-mono tracking-wide px-8">
                   Try the Simulation
