@@ -387,18 +387,24 @@ export default function GlobeView() {
                 <h3 className="text-blue-400 font-mono text-xs uppercase tracking-[0.2em] mb-4 text-center">Show Dates</h3>
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
                   {[
-                    { date: "Jan 23", day: "Thu", time: "8:00 PM" },
-                    { date: "Jan 24", day: "Fri", time: "8:00 PM" },
-                    { date: "Jan 25", day: "Sat", time: "2:00 PM" },
-                    { date: "Jan 25", day: "Sat", time: "8:00 PM" },
-                    { date: "Jan 31", day: "Fri", time: "8:00 PM" },
-                    { date: "Feb 1", day: "Sat", time: "2:00 PM" },
-                    { date: "Feb 1", day: "Sat", time: "8:00 PM" },
-                    { date: "Feb 7", day: "Fri", time: "8:00 PM" },
-                    { date: "Feb 8", day: "Sat", time: "2:00 PM" },
-                    { date: "Feb 8", day: "Sat", time: "8:00 PM" },
-                    { date: "Feb 14", day: "Fri", time: "8:00 PM" },
-                    { date: "Feb 15", day: "Sat", time: "2:00 PM" },
+                    { date: "Jan 23", day: "Fri", time: "8:00 PM" },
+                    { date: "Jan 24", day: "Sat", time: "2:00 PM" },
+                    { date: "Jan 24", day: "Sat", time: "4:30 PM" },
+                    { date: "Jan 25", day: "Sun", time: "2:00 PM" },
+                    { date: "Jan 25", day: "Sun", time: "4:30 PM" },
+                    { date: "Jan 30", day: "Fri", time: "8:00 PM" },
+                    { date: "Jan 31", day: "Sat", time: "2:00 PM" },
+                    { date: "Jan 31", day: "Sat", time: "4:30 PM" },
+                    { date: "Feb 1", day: "Sun", time: "2:00 PM" },
+                    { date: "Feb 1", day: "Sun", time: "4:30 PM" },
+                    { date: "Feb 6", day: "Fri", time: "8:00 PM" },
+                    { date: "Feb 7", day: "Sat", time: "2:00 PM" },
+                    { date: "Feb 7", day: "Sat", time: "4:30 PM" },
+                    { date: "Feb 8", day: "Sun", time: "2:00 PM" },
+                    { date: "Feb 13", day: "Fri", time: "8:00 PM" },
+                    { date: "Feb 14", day: "Sat", time: "2:00 PM" },
+                    { date: "Feb 14", day: "Sat", time: "4:30 PM" },
+                    { date: "Feb 15", day: "Sun", time: "2:00 PM" },
                   ].map((show, i) => (
                     <a
                       key={i}
