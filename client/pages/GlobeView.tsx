@@ -179,11 +179,11 @@ export default function GlobeView() {
     });
     trainEntityRef.current = trainEntity;
 
-    // Camera position - zoomed out to fit globe below title
+    // Camera position
     const midLon = (CUPERTINO.lon + NEW_DELHI.lon) / 2;
     const midLat = (CUPERTINO.lat + NEW_DELHI.lat) / 2;
     viewer.camera.flyTo({
-      destination: Cesium.Cartesian3.fromDegrees(midLon, midLat, 28000000),
+      destination: Cesium.Cartesian3.fromDegrees(midLon, midLat, 20000000),
       duration: 2,
     });
 
@@ -225,8 +225,8 @@ export default function GlobeView() {
         </div>
       )}
 
-      <div ref={cesiumContainer} className="absolute inset-0" style={{ filter: "saturate(0.7) brightness(0.85) hue-rotate(-10deg)" }} />
-      <div className="absolute inset-0 bg-blue-900/20 pointer-events-none" />
+      <div ref={cesiumContainer} className="absolute inset-0" style={{ filter: "saturate(1.2) brightness(0.75) hue-rotate(10deg)" }} />
+      <div className="absolute inset-0 bg-blue-950/30 pointer-events-none" />
 
       <div className="absolute inset-0 pointer-events-none">
         {/* Header */}
@@ -237,43 +237,47 @@ export default function GlobeView() {
               Gravity<span className="text-blue-400">Train</span>
             </span>
           </Link>
-          <div className="hidden md:flex items-center gap-6 font-mono text-sm">
-            <Link to="/worm-status" className="text-slate-300 hover:text-blue-400 transition-colors flex items-center gap-2">
-              <span className="relative flex h-2 w-2">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
-              </span>
-              Status
-            </Link>
-            <Link to="/simulation" className="text-slate-300 hover:text-blue-400 transition-colors">
-              Simulation
-            </Link>
-            <Link to="/concepts" className="text-slate-300 hover:text-blue-400 transition-colors">
-              Concepts
-            </Link>
-            <Link to="/about" className="text-slate-300 hover:text-blue-400 transition-colors">
-              About
-            </Link>
+          <div className="flex items-center gap-2 sm:gap-4">
+            <div className="hidden md:flex items-center gap-6 font-mono text-sm">
+              <Link to="/worm-status" className="text-slate-300 hover:text-blue-400 transition-colors flex items-center gap-2">
+                <span className="relative flex h-2 w-2">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
+                </span>
+                Status
+              </Link>
+              <Link to="/simulation" className="text-slate-300 hover:text-blue-400 transition-colors">
+                Simulation
+              </Link>
+              <Link to="/concepts" className="text-slate-300 hover:text-blue-400 transition-colors">
+                Concepts
+              </Link>
+              <Link to="/about" className="text-slate-300 hover:text-blue-400 transition-colors">
+                About
+              </Link>
+            </div>
             <a href="https://www.naatak.org/portfolio/2026-hole/" target="_blank" rel="noopener noreferrer">
-              <Button className="bg-blue-500/20 border border-blue-400/40 text-blue-300 hover:bg-blue-500/30 font-mono">
-                Book Tickets <ExternalLink className="ml-2 w-4 h-4" />
+              <Button className="bg-blue-500/20 border border-blue-400/40 text-blue-300 hover:bg-blue-500/30 font-mono text-xs sm:text-sm px-2 sm:px-4">
+                <span className="hidden sm:inline">Book Tickets</span>
+                <span className="sm:hidden">Book</span>
+                <ExternalLink className="ml-1 sm:ml-2 w-4 h-4" />
               </Button>
             </a>
           </div>
         </header>
 
         {/* Title overlay */}
-        <div className="absolute left-1/2 -translate-x-1/2 top-24 z-10 text-center pointer-events-none">
-          <h1 className="text-4xl md:text-5xl font-bold text-white mb-2">
+        <div className="absolute left-1/2 -translate-x-1/2 top-20 sm:top-24 z-10 text-center pointer-events-none w-full px-4">
+          <h1 className="text-2xl sm:text-4xl md:text-5xl font-bold text-white mb-2">
             Anywhere to Anywhere in <span className="text-amber-400">42 Minutes</span>
           </h1>
-          <p className="text-blue-300/80 font-mono text-sm">
+          <p className="text-blue-300/80 font-mono text-xs sm:text-sm hidden sm:block">
             Watch the gravity train travel through Earth's interior
           </p>
         </div>
 
-        {/* Left Panel - Altimeter */}
-        <div className="absolute left-4 top-1/2 -translate-y-1/2 z-10 pointer-events-none">
+        {/* Left Panel - Altimeter (hidden on mobile) */}
+        <div className="hidden lg:block absolute left-4 top-1/2 -translate-y-1/2 z-10 pointer-events-none">
           <div className="bg-slate-950/80 backdrop-blur-md border border-blue-500/30 rounded-xl p-4 w-48">
             <h3 className="text-blue-400 font-mono text-xs uppercase tracking-widest mb-3 text-center">Depth</h3>
             <div className="relative h-48 border border-blue-500/30 rounded-lg overflow-hidden bg-slate-900/50">
@@ -297,8 +301,8 @@ export default function GlobeView() {
           </div>
         </div>
 
-        {/* Right Panel - Speedometer */}
-        <div className="absolute right-4 top-1/2 -translate-y-1/2 z-10 pointer-events-none">
+        {/* Right Panel - Speedometer (hidden on mobile) */}
+        <div className="hidden lg:block absolute right-4 top-1/2 -translate-y-1/2 z-10 pointer-events-none">
           <div className="bg-slate-950/80 backdrop-blur-md border border-blue-500/30 rounded-xl p-4 w-48">
             <h3 className="text-amber-400 font-mono text-xs uppercase tracking-widest mb-3 text-center">Speed</h3>
             <div className="relative h-48 border border-amber-500/30 rounded-lg overflow-hidden bg-slate-900/50">
@@ -322,20 +326,20 @@ export default function GlobeView() {
           </div>
         </div>
 
-        {/* Bottom Stats display */}
-        <div className="absolute left-1/2 -translate-x-1/2 bottom-28 z-10 pointer-events-auto">
-          <div className="bg-slate-950/80 backdrop-blur-md border border-blue-500/30 rounded-xl px-8 py-4 flex gap-12">
-            <div className="text-center">
-              <p className="text-3xl font-bold text-emerald-400 font-mono">
+        {/* Center Stats overlay on globe */}
+        <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10 pointer-events-none">
+          <div className="flex gap-6 sm:gap-16 text-center">
+            <div>
+              <p className="text-4xl md:text-5xl font-bold text-emerald-400 font-mono drop-shadow-lg">
                 {timeElapsed}:{String(timeSeconds).padStart(2, '0')}
               </p>
-              <p className="text-xs text-blue-300/70 font-mono mt-1">Minutes Elapsed</p>
+              <p className="text-xs text-blue-200/80 font-mono mt-1 drop-shadow">Minutes Elapsed</p>
             </div>
-            <div className="text-center">
-              <p className="text-3xl font-bold text-white font-mono">
+            <div>
+              <p className="text-4xl md:text-5xl font-bold text-white font-mono drop-shadow-lg">
                 42:12
               </p>
-              <p className="text-xs text-blue-300/70 font-mono mt-1">Total Journey</p>
+              <p className="text-xs text-blue-200/80 font-mono mt-1 drop-shadow">Total Journey</p>
             </div>
           </div>
         </div>
