@@ -16,7 +16,7 @@ export default function Navigation({ minimal }: NavigationProps) {
       : "text-slate-300 hover:text-blue-400 transition-colors";
 
   const navLinks = [
-    { path: "/worm-status", label: "Status", icon: Activity, hasIndicator: true },
+    { path: "/worm-status", label: "Worm Status", icon: Activity, hasIndicator: true },
     { path: "/simulation", label: "Sim", icon: Play },
     { path: "/concepts", label: "Concepts", icon: Lightbulb },
     { path: "/history", label: "History", icon: BookOpen },

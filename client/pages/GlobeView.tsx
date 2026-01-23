@@ -28,7 +28,7 @@ function computeChordPositions(
 }
 
 const navLinks = [
-  { path: "/worm-status", label: "Status", icon: Activity, hasIndicator: true },
+  { path: "/worm-status", label: "Worm Status", icon: Activity, hasIndicator: true },
   { path: "/simulation", label: "Sim", icon: Play },
   { path: "/concepts", label: "Concepts", icon: Lightbulb },
   { path: "/history", label: "History", icon: BookOpen },
