@@ -7,7 +7,7 @@ import Footer from "@/components/Footer";
 
 export default function Concepts() {
   return (
-    <div className="min-h-screen bg-slate-950">
+    <div className="min-h-screen bg-slate-950 pb-mobile-nav">
       <Navigation />
 
       <div className="max-w-5xl mx-auto px-6 py-12">
@@ -167,17 +167,17 @@ export default function Concepts() {
         </Card>
 
         {/* About the Play */}
-        <Card className="border border-amber-400/40 bg-amber-500/10 p-8 mb-8">
+        <Card className="border border-amber-400/40 bg-amber-500/10 p-4 sm:p-8 mb-8">
           <div className="text-center">
             <span className="text-amber-400 font-mono text-xs uppercase tracking-[0.3em]">Naatak Production</span>
             <h2 className="text-2xl font-light text-amber-300 mt-2 tracking-wide">Experience "Hole"</h2>
             <p className="text-blue-200 font-mono text-sm mt-4 max-w-2xl mx-auto">
               This simulation accompanies <strong className="text-white">"Hole"</strong>—an upcoming theatrical production exploring gravity trains and the human stories that unfold when science fiction meets reality.
             </p>
-            <a href="https://www.naatak.org/portfolio/2026-hole/" target="_blank" rel="noopener noreferrer" className="inline-block mt-6">
-              <Button size="lg" className="bg-amber-500/20 border border-amber-400/50 text-amber-300 hover:bg-amber-500/30 font-mono tracking-wide">
+            <a href="https://www.naatak.org/portfolio/2026-hole/" target="_blank" rel="noopener noreferrer" className="block mt-6">
+              <Button size="lg" className="w-full bg-amber-500/20 border border-amber-400/50 text-amber-300 hover:bg-amber-500/30 font-mono tracking-wide justify-center">
                 Book Your Gravity Train Tickets
-                <ExternalLink className="ml-2 w-5 h-5" />
+                <ExternalLink className="ml-2 w-5 h-5 flex-shrink-0" />
               </Button>
             </a>
           </div>

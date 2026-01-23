@@ -68,7 +68,7 @@ function HolographicDisplay() {
         />
 
         {/* Main visualization */}
-        <div className="p-8">
+        <div className="p-4 sm:p-8">
           <svg className="w-full" viewBox="0 0 500 320">
             <defs>
               <linearGradient id="holoGlow" x1="0%" y1="0%" x2="100%" y2="0%">
@@ -148,30 +148,27 @@ function HolographicDisplay() {
         </div>
 
         {/* Bottom data strip */}
-        <div className="border-t border-blue-500/30 bg-blue-950/30 px-8 py-4">
-          <div className="flex justify-between items-center font-mono text-xs">
-            <div className="flex gap-8">
-              <div>
-                <span className="text-blue-400 uppercase tracking-widest">Progress</span>
-                <p className="text-blue-300 text-lg mt-1">{progressPercent.toFixed(1)}%</p>
-              </div>
-              <div>
-                <span className="text-blue-400 uppercase tracking-widest">Velocity</span>
-                <p className="text-blue-300 text-lg mt-1">2.7 km/d</p>
-              </div>
-              <div>
-                <span className="text-blue-400 uppercase tracking-widest">Core Temp</span>
-                <p className="text-amber-400 text-lg mt-1">4,300°C</p>
-              </div>
-              <div>
-                <span className="text-blue-400 uppercase tracking-widest">ETA</span>
-                <p className="text-blue-300 text-lg mt-1">~1.7 yr</p>
-                <p className="text-blue-500 text-[10px]">±mantle variance</p>
-              </div>
+        <div className="border-t border-blue-500/30 bg-blue-950/30 px-4 sm:px-8 py-4">
+          <div className="grid grid-cols-3 sm:grid-cols-5 gap-4 sm:gap-6 font-mono text-xs">
+            <div>
+              <span className="text-blue-400 uppercase tracking-wider text-[10px] sm:text-xs">Progress</span>
+              <p className="text-blue-300 text-base sm:text-lg mt-1">{progressPercent.toFixed(1)}%</p>
             </div>
-            <div className="text-right">
-              <span className="text-blue-400 uppercase tracking-widest">Timestamp</span>
-              <p className="text-blue-300 text-lg mt-1">{time.toLocaleTimeString()}</p>
+            <div>
+              <span className="text-blue-400 uppercase tracking-wider text-[10px] sm:text-xs">Velocity</span>
+              <p className="text-blue-300 text-base sm:text-lg mt-1">2.7 km/d</p>
+            </div>
+            <div>
+              <span className="text-blue-400 uppercase tracking-wider text-[10px] sm:text-xs">Temp</span>
+              <p className="text-amber-400 text-base sm:text-lg mt-1">4,300°C</p>
+            </div>
+            <div>
+              <span className="text-blue-400 uppercase tracking-wider text-[10px] sm:text-xs">ETA</span>
+              <p className="text-blue-300 text-base sm:text-lg mt-1">~1.7 yr</p>
+            </div>
+            <div className="col-span-2 sm:col-span-1 sm:text-right">
+              <span className="text-blue-400 uppercase tracking-wider text-[10px] sm:text-xs">Time</span>
+              <p className="text-blue-300 text-base sm:text-lg mt-1">{time.toLocaleTimeString()}</p>
             </div>
           </div>
         </div>
@@ -182,7 +179,7 @@ function HolographicDisplay() {
 
 export default function WormStatus() {
   return (
-    <div className="min-h-screen bg-slate-950">
+    <div className="min-h-screen bg-slate-950 pb-mobile-nav">
       <Navigation />
 
       <section className="relative py-12">
@@ -216,21 +213,21 @@ export default function WormStatus() {
             <div className="border-b border-blue-500/20 px-6 py-3">
               <span className="text-blue-400 font-mono text-xs uppercase tracking-[0.2em]">Mission Chronicle</span>
             </div>
-            <div className="p-6 font-mono text-sm space-y-3">
-              <div className="flex gap-6 text-blue-500">
-                <span className="w-16">1988</span>
+            <div className="p-4 sm:p-6 font-mono text-xs sm:text-sm space-y-3">
+              <div className="flex gap-3 sm:gap-6 text-blue-500">
+                <span className="w-12 sm:w-16 flex-shrink-0">1988</span>
                 <span className="text-slate-400">Channel Tunnel TBM decommissioned • 50 km completed</span>
               </div>
-              <div className="flex gap-6 text-blue-500">
-                <span className="w-16">2024</span>
+              <div className="flex gap-3 sm:gap-6 text-blue-500">
+                <span className="w-12 sm:w-16 flex-shrink-0">2024</span>
                 <span className="text-slate-400">Acquisition by Project Hole • Thermal retrofit initiated</span>
               </div>
-              <div className="flex gap-6 text-blue-500">
-                <span className="w-16">2025</span>
+              <div className="flex gap-3 sm:gap-6 text-blue-500">
+                <span className="w-12 sm:w-16 flex-shrink-0">2025</span>
                 <span className="text-slate-400">Boring commenced from Cupertino Station Alpha</span>
               </div>
-              <div className="flex gap-6 text-blue-300">
-                <span className="w-16">NOW</span>
+              <div className="flex gap-3 sm:gap-6 text-blue-300">
+                <span className="w-12 sm:w-16 flex-shrink-0">NOW</span>
                 <span className="text-white">Ascending through mantle • 9,656 km drilled</span>
               </div>
             </div>

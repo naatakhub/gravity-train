@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { ExternalLink } from "lucide-react";
+import { ExternalLink, Activity, Play, Lightbulb, BookOpen, Info } from "lucide-react";
 import * as Cesium from "cesium";
 import "cesium/Build/Cesium/Widgets/widgets.css";
 
@@ -27,7 +27,17 @@ function computeChordPositions(
   return positions;
 }
 
+const navLinks = [
+  { path: "/worm-status", label: "Status", icon: Activity, hasIndicator: true },
+  { path: "/simulation", label: "Sim", icon: Play },
+  { path: "/concepts", label: "Concepts", icon: Lightbulb },
+  { path: "/history", label: "History", icon: BookOpen },
+  { path: "/about", label: "About", icon: Info },
+];
+
 export default function GlobeView() {
+  const location = useLocation();
+  const currentPath = location.pathname;
   const cesiumContainer = useRef<HTMLDivElement>(null);
   const viewerRef = useRef<Cesium.Viewer | null>(null);
   const [isLoading, setIsLoading] = useState(true);
@@ -217,7 +227,7 @@ export default function GlobeView() {
   }, [progress, hasShownModal]);
 
   return (
-    <div className="min-h-screen bg-slate-950 relative overflow-hidden">
+    <div className="min-h-screen bg-slate-950 relative overflow-hidden pb-mobile-nav">
       {isLoading && (
         <div className="absolute inset-0 z-10 flex flex-col items-center justify-center bg-slate-950">
           <div className="w-16 h-16 border-4 border-blue-400/20 border-t-blue-400 rounded-full animate-spin" />
@@ -437,6 +447,37 @@ export default function GlobeView() {
           </div>
         </>
       )}
+
+      {/* Mobile bottom nav */}
+      <nav className="fixed bottom-0 left-0 right-0 bg-slate-950/95 backdrop-blur-sm border-t border-blue-500/20 z-50 md:hidden safe-area-bottom">
+        <div className="flex justify-around items-center py-2 px-1">
+          {navLinks.map(({ path, label, icon: Icon, hasIndicator }) => {
+            const isActive = currentPath === path;
+            return (
+              <Link
+                key={path}
+                to={path}
+                className={`flex flex-col items-center gap-1 px-3 py-2 rounded-lg transition-colors min-w-[60px] ${
+                  isActive
+                    ? "text-blue-400 bg-blue-500/10"
+                    : "text-slate-400 active:bg-slate-800"
+                }`}
+              >
+                <div className="relative">
+                  <Icon className="w-5 h-5" />
+                  {hasIndicator && (
+                    <span className="absolute -top-1 -right-1 flex h-2 w-2">
+                      <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
+                      <span className="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
+                    </span>
+                  )}
+                </div>
+                <span className="text-[10px] font-mono">{label}</span>
+              </Link>
+            );
+          })}
+        </div>
+      </nav>
     </div>
   );
 }

@@ -11,7 +11,7 @@ export default function Footer() {
               Gravity<span className="text-blue-400">Train</span>
             </span>
           </div>
-          <div className="flex items-center gap-6 font-mono text-sm">
+          <div className="hidden md:flex items-center gap-6 font-mono text-sm">
             <Link to="/worm-status" className="text-slate-400 hover:text-blue-400 transition-colors">Status</Link>
             <Link to="/simulation" className="text-slate-400 hover:text-blue-400 transition-colors">Simulation</Link>
             <Link to="/concepts" className="text-slate-400 hover:text-blue-400 transition-colors">Concepts</Link>
