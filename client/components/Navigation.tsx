@@ -1,7 +1,6 @@
-import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { ExternalLink, Menu, X } from "lucide-react";
+import { ExternalLink, Activity, Play, Lightbulb, BookOpen, Info } from "lucide-react";
 
 interface NavigationProps {
   minimal?: boolean;
@@ -10,24 +9,18 @@ interface NavigationProps {
 export default function Navigation({ minimal }: NavigationProps) {
   const location = useLocation();
   const currentPath = location.pathname;
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const linkClass = (path: string) =>
     currentPath === path
       ? "text-blue-400 font-medium"
       : "text-slate-300 hover:text-blue-400 transition-colors";
 
-  const mobileLinkClass = (path: string) =>
-    currentPath === path
-      ? "text-blue-400 font-medium bg-blue-500/10"
-      : "text-slate-300 hover:text-blue-400 hover:bg-blue-500/5";
-
   const navLinks = [
-    { path: "/worm-status", label: "Status", hasIndicator: true },
-    { path: "/simulation", label: "Simulation" },
-    { path: "/concepts", label: "Concepts" },
-    { path: "/history", label: "History" },
-    { path: "/about", label: "About" },
+    { path: "/worm-status", label: "Status", icon: Activity, hasIndicator: true },
+    { path: "/simulation", label: "Sim", icon: Play },
+    { path: "/concepts", label: "Concepts", icon: Lightbulb },
+    { path: "/history", label: "History", icon: BookOpen },
+    { path: "/about", label: "About", icon: Info },
   ];
 
   return (
@@ -66,17 +59,10 @@ export default function Navigation({ minimal }: NavigationProps) {
                   </Link>
                 ))}
               </div>
-              <button
-                onClick={() => setMobileMenuOpen(true)}
-                className="md:hidden p-2 bg-blue-500 text-white rounded"
-                aria-label="Open menu"
-              >
-                <Menu className="w-6 h-6" />
-              </button>
               <a href="https://www.naatak.org/portfolio/2026-hole/" target="_blank" rel="noopener noreferrer">
                 <Button className="bg-blue-500/20 border border-blue-400/40 text-blue-300 hover:bg-blue-500/30 font-mono text-xs sm:text-sm px-2 sm:px-4">
                   <span className="hidden sm:inline">Book Tickets</span>
-                  <span className="sm:hidden">Book</span>
+                  <span className="sm:hidden">Tickets</span>
                   <ExternalLink className="ml-1 sm:ml-2 w-4 h-4" />
                 </Button>
               </a>
@@ -86,56 +72,35 @@ export default function Navigation({ minimal }: NavigationProps) {
       </nav>
 
       {!minimal && (
-        <>
-          <div
-            className={`fixed inset-0 bg-black/60 backdrop-blur-sm z-50 transition-opacity duration-300 md:hidden ${
-              mobileMenuOpen ? "opacity-100" : "opacity-0 pointer-events-none"
-            }`}
-            onClick={() => setMobileMenuOpen(false)}
-          />
-          <div
-            className={`fixed top-0 right-0 h-full w-72 bg-slate-950 border-l border-blue-500/20 z-50 transform transition-transform duration-300 ease-out md:hidden ${
-              mobileMenuOpen ? "translate-x-0" : "translate-x-full"
-            }`}
-          >
-            <div className="flex items-center justify-between p-6 border-b border-blue-500/20">
-              <span className="text-lg font-light text-white">Menu</span>
-              <button
-                onClick={() => setMobileMenuOpen(false)}
-                className="p-2 text-slate-300 hover:text-blue-400 transition-colors"
-                aria-label="Close menu"
-              >
-                <X className="w-6 h-6" />
-              </button>
-            </div>
-            <div className="flex flex-col py-4">
-              {navLinks.map(({ path, label, hasIndicator }) => (
+        <nav className="fixed bottom-0 left-0 right-0 bg-slate-950/95 backdrop-blur-sm border-t border-blue-500/20 z-50 md:hidden safe-area-bottom">
+          <div className="flex justify-around items-center py-2 px-1">
+            {navLinks.map(({ path, label, icon: Icon, hasIndicator }) => {
+              const isActive = currentPath === path;
+              return (
                 <Link
                   key={path}
                   to={path}
-                  onClick={() => setMobileMenuOpen(false)}
-                  className={`${mobileLinkClass(path)} flex items-center gap-3 px-6 py-4 font-mono text-sm transition-colors`}
+                  className={`flex flex-col items-center gap-1 px-3 py-2 rounded-lg transition-colors min-w-[60px] ${
+                    isActive
+                      ? "text-blue-400 bg-blue-500/10"
+                      : "text-slate-400 active:bg-slate-800"
+                  }`}
                 >
-                  {hasIndicator && (
-                    <span className="relative flex h-2 w-2">
-                      <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
-                      <span className="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
-                    </span>
-                  )}
-                  {label}
+                  <div className="relative">
+                    <Icon className="w-5 h-5" />
+                    {hasIndicator && (
+                      <span className="absolute -top-1 -right-1 flex h-2 w-2">
+                        <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
+                        <span className="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
+                      </span>
+                    )}
+                  </div>
+                  <span className="text-[10px] font-mono">{label}</span>
                 </Link>
-              ))}
-              <div className="px-6 pt-6">
-                <a href="https://www.naatak.org/portfolio/2026-hole/" target="_blank" rel="noopener noreferrer" className="block">
-                  <Button className="w-full bg-blue-500/20 border border-blue-400/40 text-blue-300 hover:bg-blue-500/30 font-mono">
-                    Book Tickets
-                    <ExternalLink className="ml-2 w-4 h-4" />
-                  </Button>
-                </a>
-              </div>
-            </div>
+              );
+            })}
           </div>
-        </>
+        </nav>
       )}
     </>
   );

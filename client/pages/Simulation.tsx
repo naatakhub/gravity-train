@@ -152,7 +152,7 @@ export default function Simulation() {
   const seconds = Math.floor(currentTime % 60);
 
   return (
-    <div className="min-h-screen bg-slate-950">
+    <div className="min-h-screen bg-slate-950 pb-mobile-nav">
       <Navigation />
 
       <div className="max-w-7xl mx-auto px-6 py-12">

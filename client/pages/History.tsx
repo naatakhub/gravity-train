@@ -7,7 +7,7 @@ import Footer from "@/components/Footer";
 
 export default function History() {
   return (
-    <div className="min-h-screen bg-slate-950">
+    <div className="min-h-screen bg-slate-950 pb-mobile-nav">
       <Navigation />
 
       {/* Hero Section */}

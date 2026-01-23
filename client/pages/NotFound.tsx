@@ -11,7 +11,7 @@ export default function NotFound() {
   }, [location.pathname]);
 
   return (
-    <div className="min-h-screen bg-slate-950 flex items-center justify-center">
+    <div className="min-h-screen bg-slate-950 flex items-center justify-center pb-mobile-nav">
       <div className="text-center px-6">
         <div className="flex justify-center mb-6">
           <img src="/logo-icon.png" alt="Gravity Train" className="w-24 h-24" />
