@@ -12,7 +12,7 @@ export default function Footer() {
             </span>
           </div>
           <div className="hidden md:flex items-center gap-6 font-mono text-sm">
-            <Link to="/worm-status" className="text-slate-400 hover:text-blue-400 transition-colors">Status</Link>
+            <Link to="/worm-status" className="text-slate-400 hover:text-blue-400 transition-colors">Worm Status</Link>
             <Link to="/simulation" className="text-slate-400 hover:text-blue-400 transition-colors">Simulation</Link>
             <Link to="/concepts" className="text-slate-400 hover:text-blue-400 transition-colors">Concepts</Link>
             <Link to="/history" className="text-slate-400 hover:text-blue-400 transition-colors">History</Link>
