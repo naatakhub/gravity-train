@@ -412,6 +412,7 @@ export default function GlobeView() {
                     { date: "Feb 14", day: "Sat", time: "2:00 PM" },
                     { date: "Feb 14", day: "Sat", time: "4:30 PM" },
                     { date: "Feb 15", day: "Sun", time: "2:00 PM" },
+                    { date: "Feb 15", day: "Sun", time: "4:30 PM" },
                   ].map((show, i) => (
                     <a
                       key={i}
